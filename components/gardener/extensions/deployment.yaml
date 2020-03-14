@@ -415,7 +415,7 @@ extension_manifests:
                   version: 18.04.201906170
                 - image: projects/centos-cloud/global/images/centos-7-v20200309
                   name: rhel
-                  version: 7.6.0               
+                  version: 7.6.0
             image:
               repo: (( version.image_repo || ~~ ))
               tag: (( version.image_tag || ~~ ))
