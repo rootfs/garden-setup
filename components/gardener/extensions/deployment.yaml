@@ -133,6 +133,35 @@ extension_manifests:
         type: suse-jeos
 
 ########################################
+  os-rhel:
+########################################
+    <<: (( &template ))
+    apiVersion: core.gardener.cloud/v1alpha1
+    kind: ControllerRegistration
+    metadata:
+      name: os-rhel
+    spec:
+      deployment:
+        providerConfig:
+          chart: (( encoded_chart ))
+          values:
+            concurrentSyncs: 25
+            image:
+              repo: (( version.image_repo || ~~ ))
+              tag: (( version.image_tag || ~~ ))
+            resources:
+              limits:
+                cpu: 100m
+                memory: 256Mi
+              requests:
+                cpu: 20m
+                memory: 64Mi
+        type: helm
+      resources:
+      - kind: OperatingSystemConfig
+        type: rhel
+
+########################################
   dns-external:
 ########################################
     <<: (( &template ))
@@ -384,6 +413,9 @@ extension_manifests:
                 - image: projects/ubuntu-os-cloud/global/images/ubuntu-minimal-1804-bionic-v20190617
                   name: ubuntu
                   version: 18.04.201906170
+                - image: projects/centos-cloud/global/images/centos-7-v20200309
+                  name: rhel
+                  version: 7                  
             image:
               repo: (( version.image_repo || ~~ ))
               tag: (( version.image_tag || ~~ ))

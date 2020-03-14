@@ -26,6 +26,10 @@
           "repo": "https://github.com/gardener/gardener-extensions.git",
           "version": "1.0.4"
         },
+        "os-rhel": {
+          "repo": "https://github.com/rootfs/gardener-extension-os-rhel.git",
+          "version": "v0.1"
+        },
         "provider-aws": {
           "repo": "https://github.com/gardener/gardener-extensions.git",
           "version": "1.0.4"

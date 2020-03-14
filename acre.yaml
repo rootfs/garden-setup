@@ -79,6 +79,13 @@ landscape:
           chart_path: controllers/os-suse-jeos/charts/os-suse-jeos
           image_tag: (( valid( os-suse-jeos.tag ) ? os-suse-jeos.tag :~~ ))
           image_repo: (( ~~ ))
+        os-rhel:
+          <<: (( merge ))
+          tag: (( valid( os-rhel.branch ) -or valid( os-rhel.commit ) ? ~~ :.dependency_versions.versions.gardener.extensions.os-rhel.version ))
+          repo: (( .dependency_versions.versions.gardener.extensions.os-rhel.repo ))
+          chart_path: charts/gardener-extension-os-rhel
+          image_tag: (( valid( os-rhel.tag ) ? os-rhel.tag :~~ ))
+          image_repo: (( ~~ ))          
         provider-aws:
           <<: (( merge ))
           tag: (( valid( provider-aws.branch ) -or valid( provider-aws.commit ) ? ~~ :.dependency_versions.versions.gardener.extensions.provider-aws.version ))
