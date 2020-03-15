@@ -28,7 +28,7 @@
         },
         "os-rhel": {
           "repo": "https://github.com/rootfs/gardener-extension-os-rhel.git",
-          "version": "v0.1"
+          "version": "v0.2"
         },
         "provider-aws": {
           "repo": "https://github.com/gardener/gardener-extensions.git",
