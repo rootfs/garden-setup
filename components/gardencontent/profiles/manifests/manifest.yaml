@@ -36,6 +36,9 @@ defaults:
       - name: ubuntu
         versions:
         - version: 18.04.201906170
+      - name: rhel
+        versions:
+        - version: 7.6.0          
       - <<: (( defaults.providerspec.machineImages || ~ ))
     machineTypes:
       - <<: (( defaults.providerspec.machineTypes || ~ ))

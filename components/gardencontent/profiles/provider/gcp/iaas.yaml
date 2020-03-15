@@ -24,6 +24,9 @@ providerConfig:
     - image: projects/ubuntu-os-cloud/global/images/ubuntu-minimal-1804-bionic-v20190617
       name: ubuntu
       version: 18.04.201906170
+    - image: projects/centos-cloud/global/images/centos-7-v20200309
+      name: rhel
+      version: 7.6.0
 
 machineTypes:
   - cpu: "2"
